@@ -3,60 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasbi counter</title>
+    <title>Deep Content Pro Tasbih - 24 Paragraphs & Ads</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Setup Screen (with Header & Footer Ads) -->
+    <!-- Setup Screen -->
     <div id="setup-screen">
-        <!-- Header Ad (728x90) -->
-        <div class="ad-slot" style="min-height:90px; margin-top:10px;" data-ad-type="atoptions" data-ad-key="5c52184c035828e36bce6b703eab5e7a" data-ad-width="728" data-ad-height="90">
-            <script>
-              atOptions = {
-                'key' : '5c52184c035828e36bce6b703eab5e7a',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/5c52184c035828e36bce6b703eab5e7a/invoke.js"></script>
-        </div>
-        
-        <h1 style="color:var(--primary); font-size: 2rem;">Let's set a target for Zikr today.</h1>
-        <p>If talking about studying set a Counter?</p>
+        <div class="ad-slot" style="min-height:90px; margin-top:10px;" data-ad-type="atoptions" data-ad-key="5c52184c035828e36bce6b703eab5e7a" data-ad-width="728" data-ad-height="90"></div>
+        <h1 style="color:var(--primary); font-size: 2rem;">Zikr Goal Set Karein</h1>
+        <p>Aap aaj kitni martaba parhna chahte hain?</p>
         <input type="number" id="targetInput" placeholder="Maslan: 100" min="1">
-        <button class="btn-main" onclick="startTasbih()">START PRAY</button>
-        
-        <!-- Footer Ad (728x90) -->
-        <div class="ad-slot" style="min-height:90px;" data-ad-type="atoptions" data-ad-key="5c52184c035828e36bce6b703eab5e7a" data-ad-width="728" data-ad-height="90">
-            <script>
-              atOptions = {
-                'key' : '5c52184c035828e36bce6b703eab5e7a',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/5c52184c035828e36bce6b703eab5e7a/invoke.js"></script>
-        </div>
+        <button class="btn-main" onclick="startTasbih()">SHURU KAREIN</button>
+        <div class="ad-slot" style="min-height:90px;" data-ad-type="atoptions" data-ad-key="5c52184c035828e36bce6b703eab5e7a" data-ad-width="728" data-ad-height="90"></div>
     </div>
 
-    <!-- Reward Popup (with Interstitial Ad) -->
+    <!-- Reward Popup -->
     <div id="reward-popup">
         <h1 style="color: #fbbf24; font-size: 3.5rem;">MashaAllah! 🎉</h1>
         <p id="congrats-text" style="font-size: 1.4rem; margin-bottom: 25px;"></p>
-        <!-- Interstitial Ad (special container) -->
-        <div class="ad-slot" style="min-height:250px; background: transparent;" data-ad-type="container" data-ad-container-id="container-2759a2dd5d21eebc22c7bce6eba2f85d" data-ad-script-src="https://pl28861948.effectivegatecpm.com/2759a2dd5d21eebc22c7bce6eba2f85d/invoke.js">
-            <div id="container-2759a2dd5d21eebc22c7bce6eba2f85d"></div>
-            <script async="async" data-cfasync="false" src="https://pl28861948.effectivegatecpm.com/2759a2dd5d21eebc22c7bce6eba2f85d/invoke.js"></script>
-        </div>
-        <button class="btn-main" onclick="resetForNewGoal()">New Target Set now</button>
+        <div class="ad-slot" style="min-height:250px; background: transparent;" data-ad-type="container" data-ad-container-id="container-2759a2dd5d21eebc22c7bce6eba2f85d" data-ad-script-src="https://pl28861948.effectivegatecpm.com/2759a2dd5d21eebc22c7bce6eba2f85d/invoke.js"></div>
+        <button class="btn-main" onclick="resetForNewGoal()">Naya Target Set Karein</button>
     </div>
 
-    <!-- Sticky Header with Progress Bar -->
+    <!-- Sticky Header -->
     <div class="header-sticky">
         <div class="progress-container"><div class="progress-bar" id="bar"></div></div>
         <div style="font-size: 12px; color: var(--primary);">Progress Bar</div>
@@ -66,244 +35,78 @@
     <div class="tasbih-container">
         <div id="target-display" style="font-size: 16px; color: #94a3b8; margin-bottom: 5px;">Goal: 0</div>
         <div class="counter-display" id="counter">0</div>
-        <button class="btn-count" onclick="increment()">PRAY To TAP</button>
+        <button class="btn-count" onclick="increment()">TAP</button>
     </div>
 
-    <!-- Middle Page Banner (300x250) -->
-    <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-        <script>
-          atOptions = {
-            'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-            'format' : 'iframe',
-            'height' : 250,
-            'width' : 300,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-    </div>
+    <!-- Middle Banner -->
+    <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
 
-    <!-- Content Area with Headings, Paragraphs and In-Content Ads -->
+    <!-- Content Area with 24 Paragraphs and Ads -->
     <div class="content-area">
         <!-- باب 1 -->
         <h2>1. ذکرِ الہی کی اہمیت اور اس کی فضیلت</h2>
         <p>ذکرِ الہی وہ نور ہے جو مومن کے دل کو روشن کرتا ہے اور اسے دنیا کی تاریکیوں سے نکال کر اللہ کی معرفت کی طرف لے جاتا ہے۔ قرآنِ پاک میں اللہ تعالی نے بار بار ذکر کی تاکید فرمائی ہے تاکہ انسان کا تعلق اپنے خالق سے مضبوط رہے۔</p>
-        <!-- Ad 1.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>ذکر صرف زبان سے کلمہ پڑھنے کا نام نہیں بلکہ یہ دل کی وہ کیفیت ہے جہاں انسان ہر سانس میں اللہ کی موجودگی کو محسوس کرتا ہے۔ جو دل اللہ کے ذکر سے خالی ہوتا ہے وہ مردہ گھر کی مانند ہے جہاں سکون نہیں ہوتا۔</p>
-        <!-- Ad 1.2 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>کثرت سے اللہ کا نام لینے والے مرد اور عورتیں اللہ کے نزدیک بہت بڑا مقام رکھتے ہیں۔ یہ وہ عمل ہے جس کے لیے نہ کسی خاص وقت کی ضرورت ہے اور نہ ہی کسی خاص جگہ کی، آپ ہر حال میں اللہ کو یاد کر سکتے ہیں۔</p>
 
         <!-- باب 2 -->
         <h2>2. استغفار: گناہوں کی معافی اور رزق کا ذریعہ</h2>
         <p>استغفار انسان کے لیے وہ ڈھال ہے جو اسے اللہ کے عذاب سے بچاتی ہے اور اس کے لیے رحمتوں کے دروازے کھول دیتی ہے۔ جب ایک بندہ سچے دل سے توبہ کرتا ہے تو اللہ اس کے تمام پچھلے گناہ معاف فرما دیتا ہے۔</p>
-        <!-- Ad 2.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>حضرت محمد ﷺ دن میں سو سے زیادہ مرتبہ استغفار فرمایا کرتے تھے حالانکہ آپ ﷺ معصوم تھے۔ یہ ہمیں سکھانے کے لیے تھا کہ استغفار سے نہ صرف گناہ دھلتے ہیں بلکہ درجات بھی بلند ہوتے ہیں۔</p>
-        <!-- Ad 2.2 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>اگر آپ رزق کی تنگی یا پریشانیوں کا شکار ہیں تو استغفار کو اپنا معمول بنا لیں۔ اللہ تعالی استغفار کی برکت سے وہاں سے رزق عطا فرماتا ہے جہاں سے انسان کا گمان بھی نہیں ہوتا۔</p>
 
         <!-- باب 3 -->
         <h2>3. درود شریف: نبی ﷺ سے محبت کا اظہار</h2>
         <p>درود شریف وہ عظیم عبادت ہے جو اللہ تعالی خود بھی کرتا ہے اور اپنے فرشتوں کو بھی اس کا حکم دیتا ہے۔ یہ نبی کریم ﷺ کی بارگاہ میں وفاداری اور محبت کا سب سے بڑا تحفہ ہے۔</p>
-        <!-- Ad 3.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>ایک مرتبہ درود پڑھنے والے پر اللہ تعالی دس رحمتیں نازل فرماتا ہے اور اس کے نامہ اعمال میں دس نیکیاں لکھ دی جاتی ہیں۔ درود پڑھنے سے دعائیں جلدی قبول ہوتی ہیں۔</p>
-        <!-- Ad 3.2 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>قیامت کے دن نبی کریم ﷺ کے سب سے قریب وہ شخص ہوگا جس نے دنیا میں سب سے زیادہ درود پڑھا ہوگا۔ یہ شفاعت حاصل کرنے کا سب سے آسان اور خوبصورت راستہ ہے۔</p>
 
         <!-- باب 4 -->
         <h2>4. سبحان اللہ اور الحمدللہ کی طاقت</h2>
         <p>سبحان اللہ کہنا اللہ کی پاکی بیان کرنا ہے اور الحمدللہ کہنا اس کی نعمتوں کا شکر ادا کرنا ہے۔ یہ دو کلمات زبان پر ہلکے لیکن میزان (ترازو) میں بہت بھاری ہیں۔</p>
-        <!-- Ad 4.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>کائنات کی ہر چیز اللہ کی تسبیح بیان کر رہی ہے۔ جب ہم سبحان اللہ کہتے ہیں تو ہم کائنات کے اس عظیم نظامِ عبادت کا حصہ بن جاتے ہیں جو ہر طرف جاری و ساری ہے۔</p>
-        <!-- Ad 4.2 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>شکر گزاری (الحمدللہ) سے اللہ تعالی اپنی نعمتوں میں مزید اضافہ فرما دیتا ہے۔ جتنا زیادہ ہم اللہ کا شکر ادا کریں گے، وہ ہمیں اتنا ہی زیادہ اپنی نوازشات سے مالا مال کرے گا۔</p>
 
-        <!-- باب 5 (صرف ایک اشتہار) -->
+        <!-- باب 5 -->
         <h2>5. صبر اور اللہ پر توکل کا ذکر</h2>
         <p>صبر مومن کا وہ ہتھیار ہے جو اسے مشکل ترین حالات میں بھی ٹوٹنے نہیں دیتا۔ اللہ تعالی فرماتا ہے کہ 'بے شک اللہ صبر کرنے والوں کے ساتھ ہے'۔ ذکرِ الہی سے صبر کرنے کی قوت ملتی ہے۔</p>
-        <!-- Ad 5.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>جب ہم اللہ پر توکل کرتے ہیں اور اپنی تمام پریشانیاں اس کے سپرد کر دیتے ہیں تو ہمارا دل مطمئن ہو جاتا ہے۔ ذکر ہمیں یاد دلاتا ہے کہ کائنات کا مالک ہر چیز پر قادر ہے۔</p>
         <p>مشکل وقت میں 'حسبنا اللہ ونعم الوکیل' کا ورد کرنا انسان کو نفسیاتی اور روحانی طور پر مضبوط بناتا ہے۔ یہ یقین کہ اللہ کافی ہے، انسان کو ہر خوف سے آزاد کر دیتا ہے۔</p>
 
         <!-- باب 6 -->
         <h2>6. تسبیح کے ذریعے ذہنی سکون کا حصول</h2>
         <p>آج کل کے پرفتن اور تناؤ بھرے دور میں ہر دوسرا انسان ذہنی سکون کی تلاش میں ہے۔ سائنس بھی یہ مانتی ہے کہ بار بار ایک ہی کلمہ دہرانے سے دماغ کو سکون ملتا ہے اور پریشانی کم ہوتی ہے۔</p>
-        <!-- Ad 6.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>ذکرِ الہی وہ بہترین میڈی ٹیشن (Meditation) ہے جو انسان کے اعصاب کو پرسکون کرتی ہے۔ جب آپ تسبیح پر توجہ مرکوز کرتے ہیں تو دنیاوی خیالات پیچھے رہ جاتے ہیں۔</p>
         <p>نماز کے بعد کی تسبیحات (33 بار سبحان اللہ، 33 بار الحمدللہ، 34 بار اللہ اکبر) انسان کے پورے دن کی تھکن کو ختم کرنے اور روح کو تازگی بخشنے کا بہترین نسخہ ہیں۔</p>
 
         <!-- باب 7 -->
         <h2>7. جدید ٹیکنالوجی اور دینی معمولات</h2>
         <p>جدید دور میں موبائل ایپس اور ویب سائٹس نے دینی کاموں کو آسان بنا دیا ہے۔ ڈیجیٹل تسبیح کاؤنٹر کے ذریعے آپ کہیں بھی، کسی بھی وقت اپنے اذکار کی گنتی کو محفوظ کر سکتے ہیں۔</p>
-        <!-- Ad 7.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>ٹیکنالوجی کا مثبت استعمال ہمیں اللہ کے قریب کر سکتا ہے۔ اگر ہم اپنے فون کو فضول کاموں کے بجائے ذکر اور تسبیح کے لیے استعمال کریں تو یہی فون ہماری نجات کا ذریعہ بن سکتا ہے۔</p>
         <p>یہ ویب سائٹ آپ کو ہدف (Target) مقرر کرنے کی سہولت دیتی ہے تاکہ آپ ایک نظم و ضبط کے ساتھ اپنی عبادت کو پورا کر سکیں۔ اس سے آپ کے اندر ایک مقصد پیدا ہوتا ہے۔</p>
 
         <!-- باب 8 -->
         <h2>8. اخلاصِ نیت اور ذکر کی قبولیت</h2>
         <p>کسی بھی عمل کی قبولیت کا دارومدار نیت پر ہوتا ہے۔ اگر ہم صرف دکھاوے کے لیے تسبیح پڑھیں گے تو اس کا وہ فائدہ نہیں ہوگا جو سچے دل اور اخلاص کے ساتھ پڑھنے سے ہوتا ہے۔</p>
-        <!-- Ad 8.1 -->
-        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250">
-            <script>
-              atOptions = {
-                'key' : 'e75f5a9c335d70417c8a17607a252ab0',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/e75f5a9c335d70417c8a17607a252ab0/invoke.js"></script>
-        </div>
+        <div class="ad-slot" style="min-height:250px;" data-ad-type="atoptions" data-ad-key="e75f5a9c335d70417c8a17607a252ab0" data-ad-width="300" data-ad-height="250"></div>
         <p>ذکر کرتے وقت یہ سوچنا چاہیے کہ میرا رب مجھے دیکھ رہا ہے اور میری پکار سن رہا ہے۔ یہی وہ مقامِ احسان ہے جہاں بندہ اللہ کی محبت میں کھو جاتا ہے۔</p>
         <p>اللہ تعالی ہمیں توفیق عطا فرمائے کہ ہم اپنی زبانوں کو اس کے ذکر سے تر رکھیں اور ہماری یہ چھوٹی سی کوشش اس کی بارگاہ میں قبول و منظور ہو جائے۔ آمین۔</p>
     </div>
 
-    <!-- Sticky Bottom Ad (320x50) for Mobile -->
-    <div class="sticky-bottom-ad" id="stickyBottomAd" data-ad-type="atoptions" data-ad-key="c178397578242d3bc5811aeca0d246d7" data-ad-width="320" data-ad-height="50">
-        <script>
-          atOptions = {
-            'key' : 'c178397578242d3bc5811aeca0d246d7',
-            'format' : 'iframe',
-            'height' : 50,
-            'width' : 320,
-            'params' : {}
-          };
-        </script>
-        <script src="https://www.highperformanceformat.com/c178397578242d3bc5811aeca0d246d7/invoke.js"></script>
-    </div>
+    <!-- Sticky Bottom Ad -->
+    <div class="sticky-bottom-ad" id="stickyBottomAd" data-ad-type="atoptions" data-ad-key="c178397578242d3bc5811aeca0d246d7" data-ad-width="320" data-ad-height="50"></div>
 
     <script src="script.js"></script>
 </body>
-</html>
+            </html>
