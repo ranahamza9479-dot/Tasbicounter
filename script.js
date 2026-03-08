@@ -1,68 +1,7 @@
+// Tasbih logic
 let count = 0;
 let target = 0;
 const popunderLink = "https://www.effectivegatecpm.com/cyp2b2th7?key=4c48dc262b066e9e69253f092e89476e";
-
-// Function to initialize an ad container based on its data attributes
-function initAdContainer(container) {
-    const type = container.dataset.adType;
-    if (type === 'atoptions') {
-        const key = container.dataset.adKey;
-        const width = container.dataset.adWidth;
-        const height = container.dataset.adHeight;
-        if (!key) return;
-
-        // Clear container
-        container.innerHTML = '';
-
-        // Create atOptions script
-        const atScript = document.createElement('script');
-        atScript.text = `
-            atOptions = {
-                'key' : '${key}',
-                'format' : 'iframe',
-                'height' : ${height},
-                'width' : ${width},
-                'params' : {}
-            };
-        `;
-        container.appendChild(atScript);
-
-        // Create invoke script
-        const invokeScript = document.createElement('script');
-        invokeScript.src = `https://www.highperformanceformat.com/${key}/invoke.js`;
-        container.appendChild(invokeScript);
-    }
-    else if (type === 'container') {
-        const containerId = container.dataset.adContainerId;
-        const scriptSrc = container.dataset.adScriptSrc;
-        if (!containerId || !scriptSrc) return;
-
-        // Clear container
-        container.innerHTML = '';
-
-        // Create the inner container div
-        const innerDiv = document.createElement('div');
-        innerDiv.id = containerId;
-        container.appendChild(innerDiv);
-
-        // Create the script
-        const script = document.createElement('script');
-        script.async = true;
-        script.setAttribute('data-cfasync', 'false');
-        script.src = scriptSrc;
-        container.appendChild(script);
-    }
-}
-
-// Function to refresh all ads
-function refreshAllAds() {
-    // Select all ad containers (ad-slot class and sticky bottom ad)
-    const adContainers = document.querySelectorAll('.ad-slot, #stickyBottomAd');
-    adContainers.forEach(container => {
-        initAdContainer(container);
-    });
-    console.log('All ads refreshed at', new Date().toLocaleTimeString());
-}
 
 function startTasbih() {
     const val = document.getElementById('targetInput').value;
@@ -99,7 +38,71 @@ function resetForNewGoal() {
     document.getElementById('setup-screen').style.display = "flex";
 }
 
-// Start auto-refresh every 40 seconds when page loads
-window.onload = function() {
-    setInterval(refreshAllAds, 40000);
-};
+// Ad management with auto-refresh every 40 seconds
+function getAdHTML(slot) {
+    const type = slot.dataset.adType;
+    if (type === 'atoptions') {
+        const key = slot.dataset.adKey;
+        const width = slot.dataset.adWidth;
+        const height = slot.dataset.adHeight;
+        if (!key) return '';
+        const atOptions = {
+            key: key,
+            format: 'iframe',
+            height: parseInt(height),
+            width: parseInt(width),
+            params: {}
+        };
+        return `<script>atOptions = ${JSON.stringify(atOptions)};</script>\n` +
+               `<script src="https://www.highperformanceformat.com/${key}/invoke.js"></script>`;
+    } else if (type === 'container') {
+        const containerId = slot.dataset.adContainerId;
+        const scriptSrc = slot.dataset.adScriptSrc;
+        if (!containerId || !scriptSrc) return '';
+        return `<div id="${containerId}"></div>\n` +
+               `<script async="async" data-cfasync="false" src="${scriptSrc}"></script>`;
+    }
+    return '';
+}
+
+function loadAdInSlot(slot) {
+    slot.innerHTML = '';
+    const html = getAdHTML(slot);
+    if (!html) return;
+
+    const iframe = document.createElement('iframe');
+    if (slot.dataset.adWidth) iframe.width = slot.dataset.adWidth;
+    if (slot.dataset.adHeight) iframe.height = slot.dataset.adHeight;
+    iframe.style.border = 'none';
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.display = 'block';
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.src = 'about:blank';
+
+    iframe.onload = function() {
+        try {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(html);
+            iframeDoc.close();
+        } catch (e) {
+            console.warn('Ad iframe write error', e);
+        }
+    };
+
+    slot.appendChild(iframe);
+}
+
+function refreshAllAds() {
+    console.log('Refreshing all ads...', new Date().toLocaleTimeString());
+    const slots = document.querySelectorAll('.ad-slot, #stickyBottomAd');
+    slots.forEach(loadAdInSlot);
+}
+
+// Initialise when page loads
+window.addEventListener('load', () => {
+    refreshAllAds();
+    setInterval(refreshAllAds, 40000); // 40 seconds
+});
